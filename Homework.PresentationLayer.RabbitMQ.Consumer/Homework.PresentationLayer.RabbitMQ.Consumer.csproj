@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>dotnet-Homework.RabbitMQ.Consumer-469E4071-5B85-4CEC-91C5-2F52FFDB8627</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Homework.ApplicationLayer.RabbitMQ.Consumer\Homework.ApplicationLayer.RabbitMQ.Consumer.csproj" />
+  </ItemGroup>
+</Project>
