@@ -1,4 +1,4 @@
-// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
+﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;

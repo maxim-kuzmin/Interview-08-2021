@@ -1,4 +1,4 @@
-// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
+п»ї// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
 using System;
 using System.Linq;
@@ -12,7 +12,7 @@ using Microsoft.Extensions.Logging;
 namespace Homework.PresentationLayer.RabbitMQ.Consumer
 {
     /// <summary>
-    /// Работник.
+    /// Р Р°Р±РѕС‚РЅРёРє.
     /// </summary>
     public class Worker : BackgroundService
     {
@@ -29,11 +29,11 @@ namespace Homework.PresentationLayer.RabbitMQ.Consumer
         #region Constructors
 
         /// <summary>
-        /// Конструктор.
+        /// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ.
         /// </summary>
-        /// <param name="configSettings">Настройки конфигурации.</param>
-        /// <param name="service">Сервис.</param>
-        /// <param name="logger">Регистратор.</param>
+        /// <param name="configSettings">РќР°СЃС‚СЂРѕР№РєРё РєРѕРЅС„РёРіСѓСЂР°С†РёРё.</param>
+        /// <param name="service">РЎРµСЂРІРёСЃ.</param>
+        /// <param name="logger">Р РµРіРёСЃС‚СЂР°С‚РѕСЂ.</param>
         public Worker(IConfigSettings configSettings, IService service, ILogger<Worker> logger)
         {
             ConfigSettings = configSettings;
