@@ -40,6 +40,10 @@ namespace Homework.DataAccessLayer.Database.Mappers.EF.Entities.Task
                 .IsRequired()
                 .IsUnicode()
                 .HasColumnName(setting.DbColumnForDescription);
+
+            builder.Property(x => x.Dt)
+                .IsRequired()
+                .HasColumnName(setting.DbColumnForDt);
         }
 
         #endregion Public methods

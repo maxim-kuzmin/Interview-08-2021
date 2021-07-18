@@ -1,5 +1,7 @@
 ﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
+using System;
+
 namespace Homework.DataAccessLayer.Database.Entities.Task
 {
     /// <summary>
@@ -18,6 +20,11 @@ namespace Homework.DataAccessLayer.Database.Entities.Task
         /// Описание.
         /// </summary>
         public string Description { get; set; }
+
+        /// <summary>
+        /// Дата создания.
+        /// </summary>
+        public DateTime Dt { get; set; }
 
         #endregion Properties
     }

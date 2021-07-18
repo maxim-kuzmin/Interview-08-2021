@@ -23,6 +23,11 @@ namespace Homework.DataAccessLayer.Database.Entities.Task
         public string DbColumnForDescription { get; set; }
 
         /// <summary>
+        /// Колонка в базе данных для поля "Dt".
+        /// </summary>
+        public string DbColumnForDt { get; set; }
+
+        /// <summary>
         /// Первичный ключ в базе данных.
         /// </summary>
         public string DbPrimaryKey { get; set; }

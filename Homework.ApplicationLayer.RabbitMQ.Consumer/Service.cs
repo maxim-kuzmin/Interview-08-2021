@@ -6,6 +6,7 @@ using Homework.DomainLayer.Domains.Task.Queries.Item.Save;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using System;
 using System.Text;
 using System.Threading;
 using SystemTask = System.Threading.Tasks.Task;
@@ -109,7 +110,8 @@ namespace Homework.ApplicationLayer.RabbitMQ.Consumer
                 ObjectOfTaskEntity = new()
                 {
                     Id = _idOfTaskEntity,
-                    Description = message
+                    Description = message,
+                    Dt = DateTime.UtcNow
                 }
             }).ConfigureAwait(false);
 

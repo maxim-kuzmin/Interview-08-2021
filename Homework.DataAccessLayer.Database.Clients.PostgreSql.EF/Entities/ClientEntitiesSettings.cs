@@ -52,7 +52,11 @@ namespace Homework.DataAccessLayer.Database.Clients.PostgreSql.EF.Entities
                 NamePartsSeparator = "_"
             };
 
-            Task = new TaskEntitySettings(dbDefaults, "task");
+            Task = new TaskEntitySettings(dbDefaults, "task")
+            {
+                DbColumnForDescription = "description",
+                DbColumnForDt = "dt"
+            };
         }
 
         #endregion Constructors     

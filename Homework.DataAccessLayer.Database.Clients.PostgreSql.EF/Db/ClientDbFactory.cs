@@ -9,7 +9,7 @@ namespace Homework.DataAccessLayer.Database.Clients.PostgreSql.EF.Db
 {
     /// <summary>
     /// Фабрика базы данных клиента. Предназначена для выполнения команд dotnet ef, например:
-    /// dotnet ef migrations add --configuration Debug -- "строка подключения к базе данных"
+    /// dotnet ef migrations add InitialCreate --configuration Debug -- "строка подключения к базе данных"
     /// dotnet ef database update --configuration Debug -- "строка подключения к базе данных"
     /// </summary>
     public class ClientDbFactory : IDesignTimeDbContextFactory<ClientDbContext>

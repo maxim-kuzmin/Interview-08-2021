@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Homework.DataAccessLayer.Database.Clients.PostgreSql.EF.Migrations
 {
@@ -15,7 +16,8 @@ namespace Homework.DataAccessLayer.Database.Clients.PostgreSql.EF.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "integer", nullable: false),
-                    Description = table.Column<string>(type: "text", nullable: false)
+                    description = table.Column<string>(type: "text", nullable: false),
+                    dt = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
                 constraints: table =>
                 {

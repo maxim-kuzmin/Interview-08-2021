@@ -58,9 +58,10 @@ namespace Homework.DomainLayer.Domains.Task
             await SystemTask.Delay(5000).ConfigureAwait(false);
 
             Logger.LogInformation(
-                "Saved a task with Id = {0} and Description = {1}",
+                "Saved a task with Id = {0}, Description = {1}, Dt = {2}",
                 input.ObjectOfTaskEntity.Id,
-                input.ObjectOfTaskEntity.Description
+                input.ObjectOfTaskEntity.Description,
+                input.ObjectOfTaskEntity.Dt
                 );
 
             return result;

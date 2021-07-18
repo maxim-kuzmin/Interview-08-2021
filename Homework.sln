@@ -37,14 +37,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework.DataAccessLayer.Da
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-DataLayer", "2-DataLayer", "{E680215B-56CB-41BD-B573-36A9836CD758}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework.DataLayer.Mappers.EF", "Homework.DataLayer.Mappers.EF\Homework.DataLayer.Mappers.EF.csproj", "{B6D4CB65-BA21-42E0-BE9C-0E4EF2FC2C03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework.DataLayer.Mappers.EF", "Homework.DataLayer.Mappers.EF\Homework.DataLayer.Mappers.EF.csproj", "{B6D4CB65-BA21-42E0-BE9C-0E4EF2FC2C03}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CA2FB607-7D86-4896-B55F-565908B932F0}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		LICENSE = LICENSE
+		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework.DataLayer", "Homework.DataLayer\Homework.DataLayer.csproj", "{97FB7958-E5DF-4FAF-BA8E-3539450FFEAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework.DataLayer", "Homework.DataLayer\Homework.DataLayer.csproj", "{97FB7958-E5DF-4FAF-BA8E-3539450FFEAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
