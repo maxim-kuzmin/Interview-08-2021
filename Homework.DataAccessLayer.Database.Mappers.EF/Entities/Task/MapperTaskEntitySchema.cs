@@ -33,6 +33,7 @@ namespace Homework.DataAccessLayer.Database.Mappers.EF.Entities.Task
             builder.HasKey(x => x.Id).HasName(setting.DbPrimaryKey);
 
             builder.Property(x => x.Id)
+                .ValueGeneratedNever()
                 .HasColumnName(setting.DbColumnForId);
 
             builder.Property(x => x.Description)

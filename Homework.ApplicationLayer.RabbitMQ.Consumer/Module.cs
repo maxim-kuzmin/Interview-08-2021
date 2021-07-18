@@ -32,10 +32,6 @@ namespace Homework.ApplicationLayer.RabbitMQ.Consumer
 
             services.AddSingleton(CreateConfigSettings);
 
-            services.AddDbContextFactory<ClientDbContext>((x, options) => options.UseNpgsql(
-                x.GetRequiredService<IConfiguration>().GetConnectionString("Database")
-                ));
-
             services.AddTransient<IDbContextFactory<MapperDbContext>>(x =>
                 x.GetRequiredService<IDbContextFactory<ClientDbContext>>()
                 );
@@ -54,7 +50,6 @@ namespace Homework.ApplicationLayer.RabbitMQ.Consumer
             {                
                 typeof(IConfigSettings),
                 typeof(IConfiguration),
-                typeof(IDbContextFactory<ClientDbContext>),
                 typeof(IDbContextFactory<MapperDbContext>),
                 typeof(ILogger),
                 typeof(IService),

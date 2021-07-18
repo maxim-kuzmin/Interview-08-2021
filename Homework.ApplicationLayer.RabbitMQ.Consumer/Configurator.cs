@@ -21,6 +21,7 @@ namespace Homework.ApplicationLayer.RabbitMQ.Consumer
             CommonConfigurator.ConfigureServices(services, new CommonModule[]
             {
                 new DomainLayer.Domains.Task.DomainModule(),
+                new DataAccessLayer.Database.Clients.PostgreSql.EF.ClientModule(),
                 new Module()
             });
         }
