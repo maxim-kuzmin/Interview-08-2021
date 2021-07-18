@@ -1,5 +1,4 @@
-﻿using IRabbitMQConfigSettings = Homework.ApplicationLayer.RabbitMQ.Config.IConfigSettings;
-using RabbitMQConfigSettings = Homework.ApplicationLayer.RabbitMQ.Config.ConfigSettings;
+﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
 namespace Homework.ApplicationLayer.RabbitMQ.Producer.Config
 {
@@ -13,10 +12,10 @@ namespace Homework.ApplicationLayer.RabbitMQ.Producer.Config
         /// <summary>
         /// Брокер сообщений RabbitMQ.
         /// </summary>
-        public RabbitMQConfigSettings RabbitMQ { get; set; }
+        public RabbitMQ.Config.ConfigSettings RabbitMQ { get; set; }
 
         /// <inheritdoc/>
-        IRabbitMQConfigSettings IConfigSettings.RabbitMQ => RabbitMQ;
+        RabbitMQ.Config.IConfigSettings IConfigSettings.RabbitMQ => RabbitMQ;
 
         #endregion Properties
     }

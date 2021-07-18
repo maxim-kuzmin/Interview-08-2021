@@ -1,4 +1,6 @@
-﻿namespace Homework.ApplicationLayer.Task.Queries.Insert
+﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
+
+namespace Homework.ApplicationLayer.Task.Queries.Insert
 {
     /// <summary>
     /// Входные данные запроса на вставку задачи.

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Infrastructure", "1-Infrastructure", "{55681B61-516B-4E35-A5D8-6A8BC09415C5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-InfrastructureLayer", "1-InfrastructureLayer", "{55681B61-516B-4E35-A5D8-6A8BC09415C5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework.InfrastructureLayer", "Homework.InfrastructureLayer\Homework.InfrastructureLayer.csproj", "{D86FA8B7-15B9-4C8B-89DB-584993AD2338}"
 EndProject
@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-DomainLayer", "4-DomainLa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework.DomainLayer.Domains.Task", "Homework.DomainLayer.Domains.Task\Homework.DomainLayer.Domains.Task.csproj", "{7385F524-BF1E-4C5F-BA3E-F8FC85ED110E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Application", "5-Application", "{D57C9F6A-BB25-4F58-B608-EAC917512697}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-ApplicationLayer", "5-ApplicationLayer", "{D57C9F6A-BB25-4F58-B608-EAC917512697}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework.ApplicationLayer", "Homework.ApplicationLayer\Homework.ApplicationLayer.csproj", "{9341628B-291F-4BB7-88A2-373AC165D930}"
 EndProject
@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework.ApplicationLayer.R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework.ApplicationLayer.RabbitMQ.Producer", "Homework.ApplicationLayer.RabbitMQ.Producer\Homework.ApplicationLayer.RabbitMQ.Producer.csproj", "{00C68F75-2800-42E4-8208-2686B247E203}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6-Presentation", "6-Presentation", "{E0ECC1AA-7A88-472A-87D3-61843F1E9155}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6-PresentationLayer", "6-PresentationLayer", "{E0ECC1AA-7A88-472A-87D3-61843F1E9155}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework.PresentationLayer.RabbitMQ.Consumer", "Homework.PresentationLayer.RabbitMQ.Consumer\Homework.PresentationLayer.RabbitMQ.Consumer.csproj", "{154D51DB-3128-4FA9-902F-CF49911442B5}"
 EndProject
@@ -30,6 +30,21 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework.DataAccessLayer.Database", "Homework.DataAccessLayer.Database\Homework.DataAccessLayer.Database.csproj", "{5F30C7CA-61C4-493C-B6EE-B37481D5887E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework.ApplicationLayer.RabbitMQ", "Homework.ApplicationLayer.RabbitMQ\Homework.ApplicationLayer.RabbitMQ.csproj", "{AABFCF94-CA7E-4B18-AE1D-B270B9DE0262}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework.DataAccessLayer.Database.Mappers.EF", "Homework.DataAccessLayer.Database.Mappers.EF\Homework.DataAccessLayer.Database.Mappers.EF.csproj", "{F96A5C1F-AA33-45AF-ABD9-181524F6BBF0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework.DataAccessLayer.Database.Clients.PostgreSql.EF", "Homework.DataAccessLayer.Database.Clients.PostgreSql.EF\Homework.DataAccessLayer.Database.Clients.PostgreSql.EF.csproj", "{C4A7121B-BEED-4B24-A341-B6568BAE0D5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-DataLayer", "2-DataLayer", "{E680215B-56CB-41BD-B573-36A9836CD758}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework.DataLayer.Mappers.EF", "Homework.DataLayer.Mappers.EF\Homework.DataLayer.Mappers.EF.csproj", "{B6D4CB65-BA21-42E0-BE9C-0E4EF2FC2C03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CA2FB607-7D86-4896-B55F-565908B932F0}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework.DataLayer", "Homework.DataLayer\Homework.DataLayer.csproj", "{97FB7958-E5DF-4FAF-BA8E-3539450FFEAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +88,22 @@ Global
 		{AABFCF94-CA7E-4B18-AE1D-B270B9DE0262}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AABFCF94-CA7E-4B18-AE1D-B270B9DE0262}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AABFCF94-CA7E-4B18-AE1D-B270B9DE0262}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F96A5C1F-AA33-45AF-ABD9-181524F6BBF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F96A5C1F-AA33-45AF-ABD9-181524F6BBF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F96A5C1F-AA33-45AF-ABD9-181524F6BBF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F96A5C1F-AA33-45AF-ABD9-181524F6BBF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4A7121B-BEED-4B24-A341-B6568BAE0D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4A7121B-BEED-4B24-A341-B6568BAE0D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4A7121B-BEED-4B24-A341-B6568BAE0D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4A7121B-BEED-4B24-A341-B6568BAE0D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6D4CB65-BA21-42E0-BE9C-0E4EF2FC2C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6D4CB65-BA21-42E0-BE9C-0E4EF2FC2C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6D4CB65-BA21-42E0-BE9C-0E4EF2FC2C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6D4CB65-BA21-42E0-BE9C-0E4EF2FC2C03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97FB7958-E5DF-4FAF-BA8E-3539450FFEAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97FB7958-E5DF-4FAF-BA8E-3539450FFEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97FB7958-E5DF-4FAF-BA8E-3539450FFEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97FB7958-E5DF-4FAF-BA8E-3539450FFEAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +118,10 @@ Global
 		{6E55FFC3-14AB-46D3-B478-F7F34296997A} = {E0ECC1AA-7A88-472A-87D3-61843F1E9155}
 		{5F30C7CA-61C4-493C-B6EE-B37481D5887E} = {B15528C9-1F4B-436D-8CA2-40CF861D3B2A}
 		{AABFCF94-CA7E-4B18-AE1D-B270B9DE0262} = {D57C9F6A-BB25-4F58-B608-EAC917512697}
+		{F96A5C1F-AA33-45AF-ABD9-181524F6BBF0} = {B15528C9-1F4B-436D-8CA2-40CF861D3B2A}
+		{C4A7121B-BEED-4B24-A341-B6568BAE0D5A} = {B15528C9-1F4B-436D-8CA2-40CF861D3B2A}
+		{B6D4CB65-BA21-42E0-BE9C-0E4EF2FC2C03} = {E680215B-56CB-41BD-B573-36A9836CD758}
+		{97FB7958-E5DF-4FAF-BA8E-3539450FFEAB} = {E680215B-56CB-41BD-B573-36A9836CD758}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B1725162-DA0C-4D52-9A13-9CE019DF3C1A}

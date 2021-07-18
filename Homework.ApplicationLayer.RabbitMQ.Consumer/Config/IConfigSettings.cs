@@ -1,4 +1,4 @@
-﻿using Homework.ApplicationLayer.RabbitMQ.Consumer.Worker;
+﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
 namespace Homework.ApplicationLayer.RabbitMQ.Consumer.Config
 {
@@ -12,12 +12,12 @@ namespace Homework.ApplicationLayer.RabbitMQ.Consumer.Config
         /// <summary>
         /// Брокер сообщений RabbitMQ.
         /// </summary>
-        ApplicationLayer.RabbitMQ.Config.IConfigSettings RabbitMQ { get; }
+        RabbitMQ.Config.IConfigSettings RabbitMQ { get; }
 
         /// <summary>
-        /// Работник.
+        /// Число потоков.
         /// </summary>
-        IWorkerConfigSettings Worker { get; }
+        int ThreadCount { get; }
 
         #endregion Properties
     }

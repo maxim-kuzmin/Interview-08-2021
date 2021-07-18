@@ -1,4 +1,6 @@
-﻿namespace Homework.DataAccessLayer.Database.Entities.Task
+﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
+
+namespace Homework.DataAccessLayer.Database.Entities.Task
 {
     /// <summary>
     /// Объект сущности "Задача".

@@ -1,4 +1,6 @@
-﻿namespace Homework.ApplicationLayer.RabbitMQ.Config
+﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
+
+namespace Homework.ApplicationLayer.RabbitMQ.Config
 {
     /// <summary>
     /// Интерфейс настроек конфигурации.

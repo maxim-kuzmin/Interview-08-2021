@@ -1,6 +1,4 @@
-﻿using Homework.ApplicationLayer.RabbitMQ.Consumer.Worker;
-using IRabbitMQConfigSettings = Homework.ApplicationLayer.RabbitMQ.Config.IConfigSettings;
-using RabbitMQConfigSettings = Homework.ApplicationLayer.RabbitMQ.Config.ConfigSettings;
+﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
 namespace Homework.ApplicationLayer.RabbitMQ.Consumer.Config
 {
@@ -14,18 +12,13 @@ namespace Homework.ApplicationLayer.RabbitMQ.Consumer.Config
         /// <summary>
         /// Брокер сообщений RabbitMQ.
         /// </summary>
-        public RabbitMQConfigSettings RabbitMQ { get; set; }
-
-        /// <summary>
-        /// Работник.
-        /// </summary>
-        public WorkerConfigSettings Worker { get; set; }
+        public RabbitMQ.Config.ConfigSettings RabbitMQ { get; set; }
 
         /// <inheritdoc/>
-        IRabbitMQConfigSettings IConfigSettings.RabbitMQ => RabbitMQ;
+        RabbitMQ.Config.IConfigSettings IConfigSettings.RabbitMQ => RabbitMQ;
 
         /// <inheritdoc/>
-        IWorkerConfigSettings IConfigSettings.Worker => Worker;
+        public int ThreadCount { get; set; }
 
         #endregion Properties
     }

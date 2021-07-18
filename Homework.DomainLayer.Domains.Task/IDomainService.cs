@@ -1,4 +1,6 @@
-﻿using Homework.DomainLayer.Domains.Task.Queries.Item.Save;
+﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
+
+using Homework.DomainLayer.Domains.Task.Queries.Item.Save;
 using System.Threading.Tasks;
 
 namespace Homework.DomainLayer.Domains.Task
@@ -15,7 +17,7 @@ namespace Homework.DomainLayer.Domains.Task
         /// </summary>
         /// <param name="input">Входные данные.</param>
         /// <returns>Задача на выполнение запроса с выходными данными.</returns>
-        Task<DomainSaveItemQueryOutput> SaveItem(DomainSaveItemQueryInput input);
+        Task<DomainItemSaveQueryOutput> SaveItem(DomainItemSaveQueryInput input);
 
         #endregion Public methods
     }

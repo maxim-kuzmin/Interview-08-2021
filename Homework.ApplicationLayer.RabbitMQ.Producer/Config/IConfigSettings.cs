@@ -1,4 +1,6 @@
-﻿namespace Homework.ApplicationLayer.RabbitMQ.Producer.Config
+﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
+
+namespace Homework.ApplicationLayer.RabbitMQ.Producer.Config
 {
     /// <summary>
     /// Интерфейс настроек конфигурации.
@@ -10,7 +12,7 @@
         /// <summary>
         /// Брокер сообщений RabbitMQ.
         /// </summary>
-        ApplicationLayer.RabbitMQ.Config.IConfigSettings RabbitMQ { get; }
+        RabbitMQ.Config.IConfigSettings RabbitMQ { get; }
 
         #endregion Properties
     }

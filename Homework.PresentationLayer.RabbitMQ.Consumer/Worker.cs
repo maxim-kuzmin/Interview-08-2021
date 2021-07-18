@@ -1,11 +1,13 @@
-using Homework.ApplicationLayer.RabbitMQ.Consumer;
-using Homework.ApplicationLayer.RabbitMQ.Consumer.Worker;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
+
 using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Homework.ApplicationLayer.RabbitMQ.Consumer;
+using Homework.ApplicationLayer.RabbitMQ.Consumer.Config;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace Homework.PresentationLayer.RabbitMQ.Consumer
 {
@@ -16,7 +18,7 @@ namespace Homework.PresentationLayer.RabbitMQ.Consumer
     {
         #region Properties
 
-        private IWorkerConfigSettings ConfigSettings { get; }
+        private IConfigSettings ConfigSettings { get; }
 
         private IService Service { get; }
 
@@ -32,7 +34,7 @@ namespace Homework.PresentationLayer.RabbitMQ.Consumer
         /// <param name="configSettings">Настройки конфигурации.</param>
         /// <param name="service">Сервис.</param>
         /// <param name="logger">Регистратор.</param>
-        public Worker(IWorkerConfigSettings configSettings, IService service, ILogger<Worker> logger)
+        public Worker(IConfigSettings configSettings, IService service, ILogger<Worker> logger)
         {
             ConfigSettings = configSettings;
 
@@ -52,7 +54,7 @@ namespace Homework.PresentationLayer.RabbitMQ.Consumer
 
             var threadNumbers = Enumerable.Range(1, ConfigSettings.ThreadCount);
 
-            foreach (var threadNumber in threadNumbers)
+            foreach (int threadNumber in threadNumbers)
             {
                 Task.Factory.StartNew(() => Run(threadNumber, stoppingToken), TaskCreationOptions.LongRunning);
             }

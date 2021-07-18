@@ -1,4 +1,6 @@
-﻿using Homework.ApplicationLayer.RabbitMQ.Config;
+﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
+
+using Homework.ApplicationLayer.RabbitMQ.Consumer.Config;
 using Homework.DomainLayer.Domains.Task;
 using Homework.DomainLayer.Domains.Task.Queries.Item.Save;
 using Microsoft.Extensions.Logging;
@@ -53,7 +55,7 @@ namespace Homework.ApplicationLayer.RabbitMQ.Consumer
 
             Logger = logger;
 
-            _connectionFactory = new() { HostName = ConfigSettings.HostName };
+            _connectionFactory = new() { HostName = ConfigSettings.RabbitMQ.HostName };
         }
 
         #endregion Constructors
@@ -67,7 +69,13 @@ namespace Homework.ApplicationLayer.RabbitMQ.Consumer
 
             using var channel = connection.CreateModel();
 
-            channel.QueueDeclare(queue: ConfigSettings.Queue, durable: true, exclusive: false, autoDelete: false, arguments: null);
+            channel.QueueDeclare(
+                queue: ConfigSettings.RabbitMQ.Queue,
+                durable: true,
+                exclusive: false,
+                autoDelete: false,
+                arguments: null
+                );
 
             channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
 
@@ -77,7 +85,7 @@ namespace Homework.ApplicationLayer.RabbitMQ.Consumer
 
             consumer.Received += async (s, e) => await OnReceived(s, e, threadNumber).ConfigureAwait(false);
 
-            channel.BasicConsume(queue: ConfigSettings.Queue, autoAck: false, consumer: consumer);
+            channel.BasicConsume(queue: ConfigSettings.RabbitMQ.Queue, autoAck: false, consumer: consumer);
 
             stoppingToken.WaitHandle.WaitOne();
         }
@@ -90,13 +98,13 @@ namespace Homework.ApplicationLayer.RabbitMQ.Consumer
         {
             byte[] body = e.Body.ToArray();
 
-            var message = Encoding.UTF8.GetString(body);
+            string message = Encoding.UTF8.GetString(body);
 
             Interlocked.Increment(ref _idOfTaskEntity);
 
             Logger.LogInformation("The thread #{0} received a task description {1}", threadNumber, message);
 
-            await DomainService.SaveItem(new DomainSaveItemQueryInput
+            await DomainService.SaveItem(new DomainItemSaveQueryInput
             {
                 ObjectOfTaskEntity = new()
                 {

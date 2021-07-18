@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
+
+using System.Collections.Generic;
 
 namespace Homework.InfrastructureLayer.Query
 {

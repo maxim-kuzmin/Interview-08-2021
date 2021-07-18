@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Homework.DataAccessLayer.Database\Homework.DataAccessLayer.Database.csproj" />    
+    <ProjectReference Include="..\Homework.DataAccessLayer.Database.Mappers.EF\Homework.DataAccessLayer.Database.Mappers.EF.csproj" />
   </ItemGroup>
 
 </Project>

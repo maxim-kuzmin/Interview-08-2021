@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Homework.ApplicationLayer.RabbitMQ\Homework.ApplicationLayer.RabbitMQ.csproj" />
+    <ProjectReference Include="..\Homework.DataAccessLayer.Database.Clients.PostgreSql.EF\Homework.DataAccessLayer.Database.Clients.PostgreSql.EF.csproj" />
   </ItemGroup>
 
 </Project>

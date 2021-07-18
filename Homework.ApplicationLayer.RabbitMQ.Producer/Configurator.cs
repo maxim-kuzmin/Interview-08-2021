@@ -1,4 +1,6 @@
-﻿using Homework.InfrastructureLayer.Common;
+﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
+
+using Homework.InfrastructureLayer.Common;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Homework.ApplicationLayer.RabbitMQ.Producer

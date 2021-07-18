@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Homework.DataLayer\Homework.DataLayer.csproj" />
     <ProjectReference Include="..\Homework.InfrastructureLayer\Homework.InfrastructureLayer.csproj" />
   </ItemGroup>
   

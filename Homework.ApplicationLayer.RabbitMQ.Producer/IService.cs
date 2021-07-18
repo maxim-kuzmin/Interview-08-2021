@@ -1,4 +1,6 @@
-﻿using Homework.ApplicationLayer.Task.Queries.Insert;
+﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
+
+using Homework.ApplicationLayer.Task.Queries.Insert;
 
 namespace Homework.ApplicationLayer.RabbitMQ.Producer
 {

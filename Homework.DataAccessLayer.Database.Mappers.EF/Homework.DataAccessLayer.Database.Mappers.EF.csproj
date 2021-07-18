@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Homework.DataAccessLayer.Database\Homework.DataAccessLayer.Database.csproj" />
+    <ProjectReference Include="..\Homework.DataLayer.Mappers.EF\Homework.DataLayer.Mappers.EF.csproj" />
+  </ItemGroup>
+
+</Project>

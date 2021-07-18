@@ -1,4 +1,6 @@
-﻿using Homework.ApplicationLayer.RabbitMQ.Config;
+﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
+
+using Homework.ApplicationLayer.RabbitMQ.Producer.Config;
 using Homework.ApplicationLayer.Task.Queries.Insert;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
@@ -38,7 +40,7 @@ namespace Homework.ApplicationLayer.RabbitMQ.Producer
 
             Logger = logger;
 
-            _connectionFactory = new ConnectionFactory() { HostName = ConfigSettings.HostName };
+            _connectionFactory = new ConnectionFactory() { HostName = ConfigSettings.RabbitMQ.HostName };
         }
 
         #endregion Constructors
@@ -52,15 +54,26 @@ namespace Homework.ApplicationLayer.RabbitMQ.Producer
 
             using var channel = connection.CreateModel();
 
-            channel.QueueDeclare(queue: ConfigSettings.Queue, durable: true, exclusive: false, autoDelete: false, arguments: null);
+            channel.QueueDeclare(
+                queue: ConfigSettings.RabbitMQ.Queue,
+                durable: true,
+                exclusive: false,
+                autoDelete: false,
+                arguments: null
+                );
 
-            var body = Encoding.UTF8.GetBytes(input.Description ?? string.Empty);
+            byte[] body = Encoding.UTF8.GetBytes(input.Description ?? string.Empty);
 
             var properties = channel.CreateBasicProperties();
 
             properties.Persistent = true;
 
-            channel.BasicPublish(exchange: "", routingKey: ConfigSettings.Queue, basicProperties: properties, body: body);
+            channel.BasicPublish(
+                exchange: string.Empty,
+                routingKey: ConfigSettings.RabbitMQ.Queue,
+                basicProperties: properties,
+                body: body
+                );
 
             Logger.LogInformation("Sent a task description {0}", input.Description);
         }

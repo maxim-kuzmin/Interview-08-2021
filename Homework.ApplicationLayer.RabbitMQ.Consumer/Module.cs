@@ -1,11 +1,17 @@
-﻿using Homework.ApplicationLayer.RabbitMQ.Consumer.Config;
-using Homework.ApplicationLayer.RabbitMQ.Consumer.Worker;
+﻿// Copyright (c) 2021 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
+
+using System;
+using System.Collections.Generic;
+using Homework.ApplicationLayer.RabbitMQ.Consumer.Config;
+using Homework.DataAccessLayer.Database.Clients.PostgreSql.EF.Db;
+using Homework.DataAccessLayer.Database.Mappers.EF.Db;
 using Homework.DomainLayer.Domains.Task;
 using Homework.InfrastructureLayer.Common;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
-using System;
 
 namespace Homework.ApplicationLayer.RabbitMQ.Consumer
 {
@@ -19,24 +25,65 @@ namespace Homework.ApplicationLayer.RabbitMQ.Consumer
         /// <inheritdoc/>
         public sealed override void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton(CreateAppConfigSettings);
+            services.AddLocalization(options =>
+            {
+                CommonConfigurator.ConfigureLocalization(options);
+            });
 
-            services.AddSingleton(x => x.GetRequiredService<IConfigSettings>().RabbitMQ);
+            services.AddSingleton(CreateConfigSettings);
 
-            services.AddSingleton(x => x.GetRequiredService<IConfigSettings>().Worker);
+            services.AddDbContextFactory<ClientDbContext>((x, options) => options.UseNpgsql(
+                x.GetRequiredService<IConfiguration>().GetConnectionString("Database")
+                ));
+
+            services.AddTransient<IDbContextFactory<MapperDbContext>>(x =>
+                x.GetRequiredService<IDbContextFactory<ClientDbContext>>()
+                );
 
             services.AddSingleton<IService>(x => new Service(
-                x.GetRequiredService<ApplicationLayer.RabbitMQ.Config.IConfigSettings>(),
+                x.GetRequiredService<IConfigSettings>(),
                 x.GetRequiredService<IDomainService>(),
                 x.GetRequiredService<ILogger<Service>>()
                 ));
         }
 
+        /// <inheritdoc/>
+        public override IEnumerable<Type> GetExports()
+        {
+            return new[]
+            {                
+                typeof(IConfigSettings),
+                typeof(IConfiguration),
+                typeof(IDbContextFactory<ClientDbContext>),
+                typeof(IDbContextFactory<MapperDbContext>),
+                typeof(ILogger),
+                typeof(IService),
+                typeof(IStringLocalizer)
+            };
+        }
+
         #endregion Public methods
+
+        #region Protected methods
+
+        /// <inheritdoc/>
+        protected override IEnumerable<Type> GetImports()
+        {
+            return new[]
+            {                                
+                typeof(IConfigSettings),
+                typeof(IConfiguration),
+                typeof(IDbContextFactory<ClientDbContext>),
+                typeof(IDomainService),
+                typeof(ILogger)
+            };
+        }
+
+        #endregion Protected methods
 
         #region Private methods
 
-        private IConfigSettings CreateAppConfigSettings(IServiceProvider serviceProvider)
+        private IConfigSettings CreateConfigSettings(IServiceProvider serviceProvider)
         {
             ConfigSettings result = new();
 
